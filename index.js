@@ -72,3 +72,14 @@ cron.schedule('* * * * *', () => {
 });
 
 console.log("TDR 自動スクレイパーが起動しました（1分おきに常時稼働中）");
+// --- ここから追加：Renderのスリープ防止用簡易サーバー ---
+const http = require('http');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('TDR Scraper is alive!\n');
+});
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Keep-alive server is running on port ${PORT}`);
+});
+// ----------------------------------------------------
