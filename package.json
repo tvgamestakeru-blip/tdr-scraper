@@ -1,0 +1,14 @@
+{
+  "name": "tdr-scraper",
+  "version": "1.0.0",
+  "description": "TDR 1-minute automated scraper",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "puppeteer": "^22.0.0",
+    "node-fetch": "^2.7.0"
+  }
+}
